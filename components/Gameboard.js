@@ -3,7 +3,8 @@ import gameboardStyles from '../styles/gameboard.module.css';
 
 const Gameboard = () => {
     const [count, setCount] = useState(0);
-    const [colourArray, setColourArray] = useState([]);
+    const [memoryArray, setMemoryArray] = useState(['start', 'yellow', 'blue', 'red', 'green']);
+    const [colourArray, setColourArray] = useState(['start']);
 
     function colourSelector(colour){
         setColourArray(colourArray => [...colourArray, colour]);
@@ -11,7 +12,13 @@ const Gameboard = () => {
     }
 
     useEffect(() => {
-        console.log([colourArray, count]);
+        console.log([memoryArray, colourArray, count]);
+        console.log(colourArray[count]);
+
+        if(colourArray[count] != memoryArray[count]){
+            console.log('failed to match')
+        }
+
     }, [colourArray]);
 
     return(
