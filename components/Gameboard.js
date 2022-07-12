@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import createMemoryArray from '../util/createMemoryArray';
 import gameboardStyles from '../styles/gameboard.module.css';
 
 const Gameboard = () => {
@@ -13,10 +14,16 @@ const Gameboard = () => {
 
     useEffect(() => {
         console.log([memoryArray, colourArray, count]);
-        console.log(colourArray[count]);
 
         if(colourArray[count] != memoryArray[count]){
             console.log('failed to match')
+        }
+
+        if (count === 0){
+            let newColour = createMemoryArray();
+            setMemoryArray([...memoryArray, newColour]);
+
+            //need a function here that runs the new array for the user to see.
         }
 
     }, [colourArray]);
@@ -24,15 +31,15 @@ const Gameboard = () => {
     return(
         <div className={gameboardStyles.row}>
             <div className={gameboardStyles.column}>
-                <button className={gameboardStyles.button} style={{backgroundColor: 'green'}} 
+                <button  id='greenButton' className={gameboardStyles.button} style={{backgroundColor: 'green'}} 
                     onClick={() => colourSelector('green')} /><br></br>
-                <button className={gameboardStyles.button} style={{backgroundColor: 'red'}} 
+                <button id='redButton' className={gameboardStyles.button} style={{backgroundColor: 'red'}} 
                     onClick={() => colourSelector('red')} />
             </div>
             <div className={gameboardStyles.column}>
-                <button className={gameboardStyles.button} style={{backgroundColor: 'yellow'}} 
+                <button id='yellowButton' className={gameboardStyles.button} style={{backgroundColor: 'yellow'}} 
                     onClick={() => colourSelector('yellow')} /><br></br>
-                <button className={gameboardStyles.button} style={{backgroundColor: 'blue'}}
+                <button id='blueButton' className={gameboardStyles.button} style={{backgroundColor: 'blue'}}
                 onClick={() => colourSelector('blue')} />
             </div>
         </div>
