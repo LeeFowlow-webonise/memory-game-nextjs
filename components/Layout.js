@@ -5,7 +5,7 @@ import layoutStyles from '../styles/layout.module.css';
 const Layout = ({ children }) =>  {
   return (
     <>
-        <Nav/>
+        <Nav />
         <div className={layoutStyles.container}>
             <main className={layoutStyles.main}>
                 <Header />

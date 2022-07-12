@@ -11,5 +11,9 @@
 .column{
     float: left;
     justify-content: center;
-    margin: 50px;
+}
+
+.button {
+    height: 35vh;
+    width: 35vh;
 }
