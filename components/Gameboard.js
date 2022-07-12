@@ -1,28 +1,32 @@
 import { useEffect, useState } from 'react';
 import gameboardStyles from '../styles/gameboard.module.css';
-let count = 0;
 
 const Gameboard = () => {
-    const [colour, setColour] = useState('');
+    const [count, setCount] = useState(0);
+    const [colourArray, setColourArray] = useState([]);
+
+    function colourSelector(colour){
+        setColourArray(colourArray => [...colourArray, colour]);
+        setCount(count + 1);
+    }
 
     useEffect(() => {
-        count++
-        console.log([colour, count]);
-    }, [colour]);
+        console.log([colourArray, count]);
+    }, [colourArray]);
 
     return(
         <div className={gameboardStyles.row}>
             <div className={gameboardStyles.column}>
                 <button className={gameboardStyles.button} style={{backgroundColor: 'green'}} 
-                    onClick={() => setColour('green')} /><br></br>
+                    onClick={() => colourSelector('green')} /><br></br>
                 <button className={gameboardStyles.button} style={{backgroundColor: 'red'}} 
-                    onClick={() => setColour('red')} />
+                    onClick={() => colourSelector('red')} />
             </div>
             <div className={gameboardStyles.column}>
                 <button className={gameboardStyles.button} style={{backgroundColor: 'yellow'}} 
-                    onClick={() => setColour('yellow')} /><br></br>
+                    onClick={() => colourSelector('yellow')} /><br></br>
                 <button className={gameboardStyles.button} style={{backgroundColor: 'blue'}}
-                onClick={() => setColour('blue')} />
+                onClick={() => colourSelector('blue')} />
             </div>
         </div>
     )
