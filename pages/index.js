@@ -7,6 +7,7 @@ export default function Home() {
         <title>Memory Game</title>
         <meta name='keywords' content='memory, game' />
       </Head>
+      <h1>The Memory Game</h1>
     </div>
   )
 }

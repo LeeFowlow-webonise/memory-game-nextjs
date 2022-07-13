@@ -1,0 +1,11 @@
+.button {
+    font-weight: bolder;
+    font-size: xx-large;
+    color: black;
+    background-color: transparent;
+    border-width: 0px;
+}
+
+.button:hover {
+    color: purple;
+}

@@ -13,7 +13,7 @@ const Gameboard = () => {
     }
 
     useEffect(() => {
-        console.log([memoryArray, colourArray, count]);
+        // console.log([memoryArray, colourArray, count]);
 
         if(colourArray[count] != memoryArray[count]){
             console.log('failed to match')
@@ -23,7 +23,7 @@ const Gameboard = () => {
             let newColour = createMemoryArray();
             setMemoryArray([...memoryArray, newColour]);
 
-            //need a function here that runs the new array for the user to see.
+            console.log(memoryArray);
         }
 
     }, [colourArray]);
