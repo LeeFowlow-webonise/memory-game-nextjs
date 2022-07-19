@@ -17,3 +17,11 @@
     height: 35vh;
     width: 35vh;
 }
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:active {
+    transform: translateY(4px);
+}

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import createMemoryArray from '../util/createMemoryArray';
 import beginStyles from '../styles/begin.module.css';
 
 export default function begin() {
